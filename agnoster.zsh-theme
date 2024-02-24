@@ -152,6 +152,10 @@ prompt_agnoster_main() {
 }
 
 prompt_agnoster_precmd() {
+  #This adds a newline before every prompt except the first
+  precmd(){
+    echo
+  }
   vcs_info
   PROMPT='%{%f%b%k%}$(prompt_agnoster_main) '
 }
